@@ -1,0 +1,10 @@
+node_modules
+
+*.log
+*.env
+*.dev
+
+.DS_Store
+
+public
+
