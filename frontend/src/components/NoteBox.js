@@ -170,7 +170,9 @@ export default function NoteBox(props) {
     if (content.size > 0 ) {
       var i = 0;
       content.forEach((arr, key) => {
-        rows.push(<Typography variant="h6" gutterBottom component="div" key={key+'-cat-'+i}>{key}</Typography>);
+        rows.push(<Typography variant="h6" gutterBottom component="div" key={key+'-cat-'+i}>
+          { key.replaceAll(':', ': ').replaceAll('_', ' ') }
+        </Typography>);
         arr.forEach((item, j) => {
           rows.push(<Typography variant="body1" gutterBottom key={key+'-summary-'+j} sx={{pl:2}} >{item.summary}</Typography>);
         })
@@ -184,12 +186,14 @@ export default function NoteBox(props) {
     var rows = [];
     if (content.length > 0 ) {
       content.forEach((line, i) => {
-        if (line.speaker && line.sent) {
-          rows.push(
-            <Typography variant="body1" gutterBottom key={i + '-speaker'} component="span">
-              {'Speaker '}{line.speaker}{': '}
-            </Typography>
-          )
+        // if (line.speaker) {
+        //   rows.push(
+        //     <Typography variant="body1" gutterBottom key={i + '-speaker'} component="span">
+        //       {'Speaker '}{line.speaker}{': '}
+        //     </Typography>
+        //   )
+        // }
+        if (line.sent) {
           var sentence = [];
           line.sent.forEach((word, j) => {
             if (word.isConcept) {
@@ -203,7 +207,7 @@ export default function NoteBox(props) {
           });
           rows.push(
             <Typography variant="body1" gutterBottom key={i + '-sentence'} component="span">
-              {sentence}
+              {' - '} {sentence}
             </Typography>
           )
           rows.push(<br key={i} ></br>)

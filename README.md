@@ -1,7 +1,9 @@
 # video-demo-with-abridge
 
-Get medical note from Abridge API for video sessions.
+Get medical notes and transcripts from Abridge API for medical conversations implemented with Voange Video API.
 
+![Sample notes from Abridge API](screenshots/Screenshot-notes.png?raw=true "Sample notes from Abridge API")
+![Sample transcripts from Abridge API](screenshots/Screenshot-transcripts.png?raw=true "Sample transcripts from Abridge API")
 
 ## Available Scripts
 

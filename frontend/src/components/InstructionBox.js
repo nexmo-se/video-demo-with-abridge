@@ -7,16 +7,20 @@ import Sample2Box from '../components/Sample2Box';
 function AboutBox(props) {
   return (<List dense={false}>
     {[
-      ['utlize Vonage ConnectAPI to record Video Sessions'],
-      ['get clinical notes from Abridge API'],
-      ['upload recording-clips every minute, so it can get a note each minute'],
-      ['also upload one recording that contains the whole conversation to get a note'],
+      ['utlize Vonage ConnectAPI to record video conversations'],
+      ['get clinical notes and transcripts from Abridge API', 
+        'Abridge API uses the term \'encounter\' to refer to the conversation recorded. '
+        + 'For an encounter, Abridge API accepts an audio file for an encounter.'],
+      ['upload recording-clips every minute, so it can get a note each minute', 
+       'Create an encounter for each recording clip.'],
+      ['also upload one recording that contains the whole conversation to get a note', 
+        ''],
     ].map((t, i) => (
       <ListItem key={i}>
         <Typography sx={{ mr:2 }} variant="body2" gutterBottom component="span">{'- '}</Typography>
         <ListItemText
           primary={<Typography sx={{ mr:2 }} gutterBottom component="span">{t[0]}</Typography>}
-          secondary={" "}
+          secondary={t[1]?t[1]:''}
         />
       </ListItem>
     ))}
