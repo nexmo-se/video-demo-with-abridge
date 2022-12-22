@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "build:local": "rm -rf ./build && rm -rf ../public && PUBLIC_URL=http://localhost:3002 npm run build && cp -R ./build ../public",
-    "build:heroku": "rm -rf ./build && rm -rf ../public && PUBLIC_URL=https://apps-v-g.herokuapp.com npm run build && cp -R ./build ../public"
+    "build:heroku": "rm -rf ./build && rm -rf ../public && PUBLIC_URL=https://video-with-medical-notes.herokuapp.com npm run build && cp -R ./build ../public",
+    "build:neru":   "rm -rf ./build && rm -rf ../public && PUBLIC_URL=https://neru-b617e2b2-video-with-medical-notes-dev.use1.serverless.vonage.com npm run build && cp -R ./build ../public"
   },
   "eslintConfig": {
     "extends": [

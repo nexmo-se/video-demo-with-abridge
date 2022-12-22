@@ -128,7 +128,7 @@ class OpenTokApi {
 
   async dbFindRoomById(id) {
     try {
-      const res = await DbApi.query(`SELECT * FROM rooms WHERE id = '${id}'`);
+      const res = await DbApi.query(`SELECT * FROM medical_rooms WHERE id = '${id}'`);
       if (res.rowCount === 0) return null
       else {
         let data = res.rows[0];
@@ -142,7 +142,7 @@ class OpenTokApi {
   async dbStore(data) {
     try {
       const res = await DbApi.query(
-        `INSERT INTO rooms(id, name, session_id)` 
+        `INSERT INTO medical_rooms(id, name, session_id)` 
         + `VALUES($1, $2, $3)`
         + `ON CONFLICT (id) `
         + `DO UPDATE SET name=$2, session_id=$3, updated_at = NOW()`, 

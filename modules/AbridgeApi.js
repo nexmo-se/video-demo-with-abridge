@@ -127,7 +127,7 @@ class AbridgeApi {
   async storeDb(data) {
     try {
       const res = await DbApi.query(
-        `INSERT INTO encounters(id, external_id, status, note, transcript)` 
+        `INSERT INTO medical_encounters(id, external_id, status, note, transcript)` 
         + `VALUES($1, $2, $3, $4, $5)`
         + `ON CONFLICT (id) `
         + `DO UPDATE SET status=$3, note=$4, transcript=$5, updated_at = NOW()`, 
@@ -151,7 +151,7 @@ class AbridgeApi {
 
   async findDbById(encounterId) {
     try {
-      const res = await DbApi.query(`SELECT * FROM encounters WHERE id = '${encounterId}'`);
+      const res = await DbApi.query(`SELECT * FROM medical_encounters WHERE id = '${encounterId}'`);
       if (res.rowCount === 0) throw "not found with findDbById";
       else {
         let data = res.rows[0];

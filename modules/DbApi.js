@@ -21,7 +21,7 @@ class DbApi {
     }
 
     static async migrate() {
-        var str = `CREATE TABLE IF NOT EXISTS rooms(
+        var str = `CREATE TABLE IF NOT EXISTS medical_rooms(
             id VARCHAR(255) PRIMARY KEY,
             name VARCHAR(255) DEFAULT NULL,
             session_id VARCHAR(255) DEFAULT NULL,
@@ -30,7 +30,7 @@ class DbApi {
         )`;
         await DbApi.query(str);
 
-        str = `CREATE TABLE IF NOT EXISTS encounters(
+        str = `CREATE TABLE IF NOT EXISTS medical_encounters(
             id VARCHAR(255) PRIMARY KEY,
             external_id VARCHAR(255) DEFAULT NULL,
             note TEXT DEFAULT NULL,

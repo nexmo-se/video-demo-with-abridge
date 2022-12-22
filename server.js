@@ -98,6 +98,9 @@ app.on('noteUpdated', async function(data) {
 })
 
 // ----------------------------------------------------------------------------
+app.get('/_/health', async (req, res, next) => {
+  res.send('OK');
+});
 app.use('/api/monitoring', function (req, res, next) {
   //console.log(req.body);
   res.json(['ok!']); 

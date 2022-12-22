@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js --ignore 'front/*'  --ignore 'public/*' ",
-    "start": "node server.js",
-    "build:heroku": "rm -f ./public/output/*.wav && rm -rf /Users/yge/Projects/heroku/apps-v-g/public && cp -R ./modules ./public ./routes server.js /Users/yge/Projects/heroku/apps-v-g/"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
